@@ -36,9 +36,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define USE_MATRIX_I2C
 
 /* Select hand configuration */
-#define MASTER_LEFT
+// #define MASTER_LEFT
 // #define MASTER_RIGHT
-// #define EE_HANDS
+#define EE_HANDS
 
 // Helix keyboard OLED support
 //      see ./rules.mk: OLED_ENABLE=yes or no
@@ -63,7 +63,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define BACKLIGHT_LEVELS 3
 
 /* Set 0 if debouncing isn't needed */
-#define DEBOUNCE 5
+#define DEBOUNCING_DELAY 5
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 //#define LOCKING_SUPPORT_ENABLE
@@ -84,7 +84,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define RGBLIGHT_ANIMATIONS : see ./rules.mk: LED_ANIMATIONS = yes or no
 //    see ./rules.mk: LED_BACK_ENABLE or LED_UNDERGLOW_ENABLE set yes
 #ifdef RGBLED_BACK
-  #define RGBLED_NUM 25
+  #define RGBLED_NUM 30
 #else
   #define RGBLED_NUM 6
 #endif
@@ -114,7 +114,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //  330  RGB 6
 //  300  RGB 32
 //  310  OLED & RGB 32
-  #define USB_MAX_POWER_CONSUMPTION 400
+  #define USB_MAX_POWER_CONSUMPTION 310
 #else
   // fix iPhone and iPad power adapter issue
   // iOS device need lessthan 100

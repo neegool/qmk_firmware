@@ -1,6 +1,5 @@
 /*
-Copyright 2012 Jun Wako <wakojun@gmail.com>
-Copyright 2015 Jack Humbert
+Copyright 2015 Jun Wako <wakojun@gmail.com>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,69 +15,50 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef REV1_CONFIG_H
-#define REV1_CONFIG_H
+#ifndef CONFIG_H
+#define CONFIG_H
 
 /* USB Device descriptor parameter */
-#define VENDOR_ID       0xFEED
-#define PRODUCT_ID      0x3060
-#define DEVICE_VER      0x0001
-#define MANUFACTURER    Yushakobo
-#define PRODUCT         Helix Alpha
-#define DESCRIPTION     A split keyboard for the cheap makers
-
-#define HELIX_ROWS 5
+#define VENDOR_ID 0xFEED
+#define PRODUCT_ID 0x6464
+#define DEVICE_VER 0x0001
+/* in python2: list(u"whatever".encode('utf-16-le')) */
+/*   at most 32 characters or the ugly hack in usb_main.c borks */
+#define MANUFACTURER Varmilo
+#define PRODUCT VA87M Teensy
+#define DESCRIPTION Varmilo VA87M modded to use a Teensy controller
 
 /* key matrix size */
-// Rows are doubled-up
-#if HELIX_ROWS == 3
-  #define MATRIX_ROWS 6
-  #define MATRIX_COLS 6
-  #define MATRIX_ROW_PINS { D7, E6, B4 }
-#elif HELIX_ROWS == 4
-  #define MATRIX_ROWS 8
-  #define MATRIX_COLS 6
-  #define MATRIX_ROW_PINS { D7, E6, B4, B5 }
-#elif HELIX_ROWS == 5
-  #define MATRIX_ROWS 10
-  #define MATRIX_COLS 6
-  #define MATRIX_ROW_PINS { D7, E6, B4, B5, D4 }
-#else
-  #error "expected HELIX_ROWS 3 or 4 or 5"
-#endif
+#define MATRIX_ROWS 6
+#define MATRIX_COLS 17
+#define DIODE_DIRECTION ROW2COL
 
-// wiring of each half
-#define MATRIX_COL_PINS { F6, F7, B1, B3, B2, B6 }
-// #define MATRIX_COL_PINS { B6, B2, B3, B1, F7, F6 } //uncomment this line and comment line above if you need to reverse left-to-right key order
+#define MATRIX_ROW_PINS \
+    { B16, C10, D0, A12, A13, D7 }
+#define MATRIX_COL_PINS \
+    { D4, D2, D3, C3, C4, C6, C7, D1, C0, B0, B1, B3, B2, D5, D6, C1, C2 }
 
 /* define if matrix has ghost */
 //#define MATRIX_HAS_GHOST
 
-/* number of backlight levels */
-// #define BACKLIGHT_LEVELS 3
-
 /* Set 0 if debouncing isn't needed */
-#define DEBOUNCING_DELAY 5
+#define DEBOUNCE 5
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 #define LOCKING_SUPPORT_ENABLE
 /* Locking resynchronize hack */
 #define LOCKING_RESYNC_ENABLE
 
-/* ws2812 RGB LED */
-#define RGB_DI_PIN D3
-
-#define RGBLED_NUM 12    // Number of LEDs
 /*
  * Feature disable options
  *  These options are also useful to firmware size reduction.
  */
 
 /* disable debug print */
-// #define NO_DEBUG
+//#define NO_DEBUG
 
 /* disable print */
-// #define NO_PRINT
+//#define NO_PRINT
 
 /* disable action features */
 //#define NO_ACTION_LAYER
@@ -86,5 +66,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define NO_ACTION_ONESHOT
 //#define NO_ACTION_MACRO
 //#define NO_ACTION_FUNCTION
+
+// #define BACKLIGHT_PIN C5
+
+#ifdef BACKLIGHT_PIN
+#    define BACKLIGHT_LEVELS 3
+#endif
 
 #endif
