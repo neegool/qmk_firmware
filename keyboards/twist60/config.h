@@ -23,7 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define VENDOR_ID 0xFEED
 #define PRODUCT_ID 0x0000
 #define DEVICE_VER 0x0001
-#define MANUFACTURER neegool---------44
+#define MANUFACTURER neegool
 #define PRODUCT Twist60
 #define DESCRIPTION A custom keyboard
 
@@ -41,9 +41,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *                  ROW2COL = ROW = Anode (+), COL = Cathode (-, marked on diode)
  *
  */
-#define MATRIX_ROW_PINS    { D1, D0, D4, C6, B5, B4, E6, D7 }
-
-#define MATRIX_COL_PINS    { B6, B2, B3, B1, F7, F6, F5, F4 }
+// #define MATRIX_ROW_PINS    { D1, D0, D4, C6, B5, B4, E6, D7 }
+#define MATRIX_ROW_PINS    { C7, D6, B7, B6, D0, C6, D7, B5 }
+// #define MATRIX_COL_PINS    { B6, B2, B3, B1, F7, F6, F5, F4 }
+#define MATRIX_COL_PINS    { D3, F4, D2, F5, F6, F7, F0, F1 }
 
 #define UNUSED_PINS
 
@@ -249,3 +250,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* Bootmagic Lite key configuration */
 // #define BOOTMAGIC_LITE_ROW 0
 // #define BOOTMAGIC_LITE_COLUMN 0
+
+#define PERMISSIVE_HOLD
+#define TAPPING_TERM 150
