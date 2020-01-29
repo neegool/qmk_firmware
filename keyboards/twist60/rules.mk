@@ -9,7 +9,7 @@ MCU = atmega32u4
 #   LUFA DFU     lufa-dfu
 #   QMK DFU      qmk-dfu
 #   atmega32a    bootloadHID
-BOOTLOADER = atmel-dfu
+# BOOTLOADER = caterina
 
 
 # If you don't know the bootloader type, then you can specify the
@@ -19,7 +19,9 @@ BOOTLOADER = atmel-dfu
 #   Atmel DFU loader    4096
 #   LUFA bootloader     4096
 #   USBaspLoader        2048
-# OPT_DEFS += -DBOOTLOADER_SIZE=4096
+OPT_DEFS += -DBOOTLOADER_SIZE=4096
+
+OPT_DEFS += -DINTERRUPT_CONTROL_ENDPOINT
 
 
 # Build Options
@@ -46,6 +48,6 @@ HD44780_ENABLE = no 		# Enable support for HD44780 based LCDs (+400)
 TAP_DANCE_ENABLE = yes
 
 F_CPU = 8000000
+F_USB = $(F_CPU)
 
-BLUETOOTH_ENABLE = yes
 BLUETOOTH = AdafruitBLE
