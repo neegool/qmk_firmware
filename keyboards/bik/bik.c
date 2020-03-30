@@ -20,6 +20,8 @@
 // These are only required if you want to perform custom actions.
 
 void matrix_init_kb(void) {
+    matrix_init_user();
+    
     DDRD &= ~(1 << 5);
     PORTD &= ~(1 << 5);
 

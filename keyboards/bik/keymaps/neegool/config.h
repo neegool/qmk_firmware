@@ -17,3 +17,13 @@
 #pragma once
 
 // place overrides here
+#undef TAPPING_TERM
+#define TAPPING_TERM 190
+#define TAPPING_TOGGLE 2
+
+#define DEBOUNCE 5
+#define BOOTMAGIC_LITE_ROW 0
+#define BOOTMAGIC_LITE_COLUMN 0
+
+#define MUSIC_MASK (keycode != KC_NO)
+#define MIDI_ADVANCED
