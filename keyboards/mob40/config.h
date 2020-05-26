@@ -20,8 +20,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "config_common.h"
 
 /* USB Device descriptor parameter */
-#define VENDOR_ID 0xFEED
-#define PRODUCT_ID 0x0000
+#define VENDOR_ID 0x4E52 // NR
+#define PRODUCT_ID 0x4D46 // MF
 #define DEVICE_VER 0x0001
 #define MANUFACTURER neegool
 #define PRODUCT Mob40
@@ -42,10 +42,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
 
-// #define MATRIX_ROW_PINS    { Cf5, 7, D6, B7, B6 }
-// #define MATRIX_COL_PINS   f4,  { B5, D7, C6, D0, D3, D2, F0, F1, F4, F5, F6, F7 }
 #define MATRIX_ROW_PINS    { F4, F5, F6, F7 }
 #define MATRIX_COL_PINS    { B1, B3, B2, B6, B5, B4, E6, D7, C6, D4, D0, D1 }
+// #define MATRIX_ROW_PINS  { C7, D6, B7, B6 }
+// #define MATRIX_COL_PINS  { B5, D7, C6, D0, D3, D2, F0, F1, F4, F5, F6, F7 }
 
 #define UNUSED_PINS
 
