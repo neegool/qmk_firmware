@@ -31,10 +31,9 @@
 # RGBLIGHT_ENABLE = yes      # Enable RGB light
 
 # LAYOUTS = 60_hhkb
-TAP_DANCE_ENABLE = yes
-COMBO_ENABLE = yes
+# TAP_DANCE_ENABLE = yes
+# COMBO_ENABLE = yes
 LTO_ENABLE = yes
-
 VIA_ENABLE = yes
 
-SRC += combo.c
+# SRC += combo.c

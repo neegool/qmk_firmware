@@ -18,14 +18,7 @@
 
 enum keyboard_layer {
     BL = 0,
-    CO,
     KL,
     FN,
     RA
 };
-
-typedef enum {
-	SINGLE_TAP,
-  	SINGLE_HOLD,
-  	DOUBLE_TAP
-} td_state_t;
