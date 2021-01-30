@@ -26,7 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /*   at most 32 characters or the ugly hack in usb_main.c borks */
 #define MANUFACTURER Varmilo
 #define PRODUCT VA87M Teensy
-#define DESCRIPTION Varmilo VA87M modded to use a Teensy controller
+#define DESCRIPTION Varmilo VA87M Teensy
 
 /* key matrix size */
 #define MATRIX_ROWS 6
@@ -37,6 +37,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     { B16, C10, D0, A12, A13, D7 }
 #define MATRIX_COL_PINS \
     { D4, D2, D3, C3, C4, C6, C7, D1, C0, B0, B1, B3, B2, D5, D6, C1, C2 }
+
+#define I2C1_SCL 0 // A2 on pinout = B0
+#define I2C1_SDA 1 // A3 on pinout = B1
+#define I2C1_SCL_PAL_MODE PAL_MODE_ALTERNATIVE_2
+#define I2C1_SDA_PAL_MODE PAL_MODE_ALTERNATIVE_2
 
 /* define if matrix has ghost */
 //#define MATRIX_HAS_GHOST
